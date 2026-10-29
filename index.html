@@ -4,220 +4,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#171717">
+<meta name="theme-color" content="#17171b">
 <title>رامتین نهالگر | معماری داخلی</title>
 
 <style>
 :root{
-  --bg:#f4f4f2;
-  --white:#ffffff;
-  --black:#171717;
-  --gray:#777;
-  --line:#dededb;
+  --bg:#17171b;
+  --panel:#202025;
+  --panel2:#25252c;
+  --gray:#aaaab5;
+  --text:#e8e8ed;
+  --purple:#9675d8;
+  --line:#393842;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:Tahoma,Arial,sans-serif;
   background:var(--bg);
-  color:var(--black);
+  color:var(--text);
   line-height:2;
 }
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
 .container{width:90%;max-width:1100px;margin:auto}
 
 header{
-  background:#fff;
+  background:#17171bf5;
   border-bottom:1px solid var(--line);
 }
 nav{
-  min-height:75px;
+  min-height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:15px;
   flex-wrap:wrap;
 }
-.logo{font-size:22px;font-weight:bold;letter-spacing:1px}
-.logo span{color:#888}
-.links{display:flex;gap:22px;flex-wrap:wrap;font-size:13px}
-.links a:hover{color:#777}
+.logo{font-size:20px;font-weight:bold}
+.logo span{color:var(--purple)}
+.links{display:flex;gap:20px;flex-wrap:wrap;font-size:13px}
+.links a:hover{color:var(--purple)}
 
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:30px;
   align-items:center;
-  padding-top:70px;
-  padding-bottom:70px;
+  padding-top:65px;
+  padding-bottom:55px;
 }
-.eyebrow{font-size:12px;letter-spacing:2px;color:#777}
-h1{font-size:clamp(35px,5vw,60px);line-height:1.5;margin:12px 0}
-h1 span{display:block;color:#777}
-.hero p{color:#666;max-width:480px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.eyebrow{color:var(--purple);font-size:12px;letter-spacing:2px}
+h1{font-size:clamp(34px,5vw,55px);line-height:1.5;margin:12px 0}
+h1 span{color:var(--gray)}
+.hero p{color:var(--gray)}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 .btn{
   display:inline-block;
-  padding:10px 20px;
-  border:1px solid #222;
+  padding:9px 18px;
+  border:1px solid var(--purple);
+  border-radius:4px;
   font-size:13px;
-  transition:.2s;
 }
-.btn.dark{background:#191919;color:white}
-.btn:hover{background:#777;color:white;border-color:#777}
+.btn.primary{background:var(--purple);color:#17151d}
+.btn:hover{opacity:.8}
 
-.blueprint{
+.plan-box{
   position:relative;
-  min-height:350px;
-  background-color:#e8e8e5;
-  background-image:
-    linear-gradient(#d2d2ce 1px,transparent 1px),
-    linear-gradient(90deg,#d2d2ce 1px,transparent 1px);
-  background-size:20px 20px;
-  border:1px solid #ccc;
+  min-height:330px;
   padding:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background-color:#222228;
+  background-image:
+    linear-gradient(#35343e 1px,transparent 1px),
+    linear-gradient(90deg,#35343e 1px,transparent 1px);
+  background-size:20px 20px;
+  border:1px solid #484454;
 }
 .plan{
-  width:85%;
-  height:250px;
-  border:2px solid #333;
-  position:relative;
-  background:#e8e8e5;
-}
-.room{
   position:absolute;
-  border:1px solid #333;
+  inset:48px 35px 35px;
+  border:2px solid var(--purple);
 }
-.r1{top:0;right:0;width:42%;height:48%}
-.r2{bottom:0;right:0;width:42%;height:52%}
-.r3{top:0;left:0;width:58%;height:65%}
-.r4{bottom:0;left:0;width:58%;height:35%}
-.room:after{
-  content:"";
-  position:absolute;
-  height:5px;
-  width:35px;
-  background:#e8e8e5;
-  bottom:-3px;
-  left:20px;
-}
+.room{position:absolute;border:1px solid #aaa0c4}
+.room.one{top:0;right:0;width:42%;height:48%}
+.room.two{bottom:0;right:0;width:42%;height:52%}
+.room.three{top:0;left:0;width:58%;height:65%}
+.room.four{bottom:0;left:0;width:58%;height:35%}
 .plan-label{
   position:absolute;
-  bottom:10px;
-  left:10px;
-  font-size:10px;
-  color:#555;
+  bottom:7px;
+  left:8px;
   direction:ltr;
+  color:var(--gray);
+  font-size:9px;
 }
-.drawing-note{
+.plan-note{
   position:absolute;
-  top:10px;
-  right:12px;
+  top:8px;
+  right:10px;
+  color:var(--purple);
   font-size:10px;
-  color:#555;
+}
+.plan-dimension{
+  position:absolute;
+  bottom:8px;
+  right:10px;
+  color:var(--gray);
+  font-size:10px;
 }
 
-section{padding:60px 0;border-top:1px solid #ddd}
-.section-head{margin-bottom:25px}
-.section-head small{color:#777;font-size:12px}
-.section-head h2{font-size:26px;margin-top:4px}
+section{padding:48px 0;border-top:1px solid #303038}
+.section-head{margin-bottom:22px}
+.section-head small{color:var(--purple);font-size:11px;letter-spacing:1px}
+.section-head h2{font-size:25px;margin-top:4px}
+.muted{color:var(--gray)}
 .card{
-  background:#fff;
-  border:1px solid #e1e1df;
-  padding:24px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:22px;
+  border-radius:5px;
 }
-.card h3{font-size:17px;margin-bottom:12px}
-p.muted{color:#666}
+.card h3{font-size:16px;margin-bottom:10px}
+.card h3 span{color:var(--purple)}
 .grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
+  gap:15px;
 }
-ul{padding-right:20px}
-li{margin:5px 0}
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 0;
+  border-bottom:1px solid #35343c;
+  font-size:13px;
+}
+.info-row:last-child{border:0}
+.info-row span:first-child{color:var(--gray)}
+.info-row span:last-child{text-align:left}
+
 .skills{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:12px;
 }
 .skill{
-  background:#fff;
-  border:1px solid #ddd;
-  padding:18px;
-  font-size:14px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:15px;
+  font-size:13px;
 }
 .skill span{
   display:block;
-  font-size:25px;
-  color:#777;
+  color:var(--purple);
+  font-size:23px;
 }
 .projects{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:15px;
+  gap:14px;
 }
 .project{
-  min-height:190px;
-  background:#e7e7e4;
-  border:1px solid #c8c8c4;
   padding:15px;
+  background:var(--panel);
+  border:1px solid var(--line);
+}
+.project-art{
+  height:125px;
+  margin-bottom:14px;
+  border:1px solid #55515f;
+  background-color:#222228;
+  background-image:
+    linear-gradient(#3a3742 1px,transparent 1px),
+    linear-gradient(90deg,#3a3742 1px,transparent 1px);
+  background-size:16px 16px;
   display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  align-items:center;
+  justify-content:center;
 }
-.project-visual{
-  height:100px;
-  border:1px solid #777;
-  position:relative;
-  background:
-    linear-gradient(90deg,transparent 49%,#999 50%,transparent 51%),
-    linear-gradient(transparent 49%,#999 50%,transparent 51%);
-  background-size:22px 22px;
-}
-.project h3{font-size:15px;margin-top:12px}
-.project p{font-size:12px;color:#666}
+.project-art svg{width:85%;height:85%}
+.project h3{font-size:14px}
+.project p{font-size:12px;color:var(--gray)}
+
 .contact{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  flex-wrap:wrap;
   gap:20px;
+  flex-wrap:wrap;
 }
 footer{
-  padding:25px 0;
-  background:#191919;
-  color:#ccc;
+  padding:22px 0;
   text-align:center;
-  font-size:12px;
+  color:var(--gray);
+  font-size:11px;
+  background:#131316;
+  border-top:1px solid var(--line);
 }
 @media(max-width:700px){
-  .hero{grid-template-columns:1fr;padding-top:45px;gap:30px}
-  .blueprint{min-height:290px}
-  .plan{height:220px}
+  .hero{grid-template-columns:1fr;padding-top:40px;gap:25px}
+  .plan-box{min-height:285px}
   .grid{grid-template-columns:1fr}
   .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
   .projects{grid-template-columns:1fr}
-  .project{min-height:170px}
-  nav{padding:15px 0}
+  .project-art{height:160px}
   .links{gap:12px}
+  nav{padding:12px 0}
 }
 @media(max-width:380px){
   .skills{grid-template-columns:1fr}
+  .info-row{font-size:12px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
 <div class="container">
 <nav>
-<a class="logo" href="#home">RAMTIN <span>ARCHITECTURE</span></a>
+<a href="#home" class="logo">RAMTIN <span>ARCH.</span></a>
 <div class="links">
-<a href="#about">درباره من</a>
+<a href="#about">معرفی</a>
+<a href="#info">اطلاعات فردی</a>
 <a href="#skills">مهارت‌ها</a>
 <a href="#portfolio">پروژه‌ها</a>
 <a href="#contact">تماس</a>
@@ -229,29 +236,26 @@ footer{
 <main>
 <div class="container hero" id="home">
 <div>
-<div class="eyebrow">INTERIOR ARCHITECTURE / PORTFOLIO</div>
+<div class="eyebrow">INTERIOR ARCHITECTURE</div>
 <h1>رامتین <span>نهالگر</span></h1>
-<p>
-هنرجوی معماری داخلی | متقاضی کارآموزی
-<br>
-علاقه‌مند به طراحی فضا، نقشه‌کشی معماری
-و مدل‌سازی سه‌بعدی.
-</p>
+<p>هنرجوی معماری داخلی | متقاضی کارآموزی</p>
+<p>علاقه‌مند به طراحی فضاهای داخلی، نقشه‌کشی و مدل‌سازی سه‌بعدی.</p>
 <div class="buttons">
-<a class="btn dark" href="#portfolio">مشاهده پروژه‌ها</a>
+<a class="btn primary" href="#portfolio">مشاهده پروژه‌ها</a>
 <a class="btn" href="#contact">ارتباط کاری</a>
 </div>
 </div>
 
-<div class="blueprint">
-<div class="drawing-note">INTERIOR PLAN / 01</div>
+<div class="plan-box" aria-label="پلان معماری">
+<div class="plan-note">INTERIOR PLAN / 01</div>
 <div class="plan">
-<div class="room r1"></div>
-<div class="room r2"></div>
-<div class="room r3"></div>
-<div class="room r4"></div>
+<div class="room one"></div>
+<div class="room two"></div>
+<div class="room three"></div>
+<div class="room four"></div>
 <div class="plan-label">ARCHITECTURAL DRAWING</div>
 </div>
+<div class="plan-dimension">PLAN • 001</div>
 </div>
 </div>
 
@@ -269,24 +273,30 @@ footer{
 کسب تجربه عملی و پیشرفت در زمینه معماری داخلی.
 </p>
 </div>
+</div>
+</section>
 
-<div class="grid" style="margin-top:16px">
+<section id="info">
+<div class="container">
+<div class="section-head">
+<small>02 / PERSONAL PROFILE</small>
+<h2>اطلاعات فردی</h2>
+</div>
+<div class="grid">
 <div class="card">
-<h3>اطلاعات فردی</h3>
-<ul>
-<li>نام و نام خانوادگی: رامتین نهالگر</li>
-<li>سن: ۱۷ سال</li>
-<li>رشته تحصیلی: معماری داخلی</li>
-<li>وضعیت تحصیلی: هنرجو</li>
-<li>شهر محل سکونت: تهران</li>
-</ul>
+<h3><span>▌</span> مشخصات</h3>
+<div class="info-row"><span>نام کامل</span><span>رامتین نهالگر</span></div>
+<div class="info-row"><span>سن</span><span>۱۷ سال</span></div>
+<div class="info-row"><span>رشته</span><span>معماری داخلی</span></div>
+<div class="info-row"><span>وضعیت</span><span>هنرجو</span></div>
+<div class="info-row"><span>شهر</span><span>تهران</span></div>
 </div>
 <div class="card">
-<h3>هدف شغلی</h3>
+<h3><span>▌</span> هدف شغلی</h3>
 <p class="muted">
-پذیرش به‌عنوان کارآموز در دفتر معماری داخلی با هدف کسب
-تجربه در زمینه طراحی، نقشه‌کشی، مدل‌سازی سه‌بعدی و
-فرایند اجرای پروژه‌های معماری داخلی.
+پذیرش به‌عنوان کارآموز در دفتر معماری داخلی برای کسب تجربه
+در طراحی، نقشه‌کشی، مدل‌سازی سه‌بعدی و فرایند اجرای پروژه‌های
+معماری داخلی.
 </p>
 </div>
 </div>
@@ -296,23 +306,22 @@ footer{
 <section id="skills">
 <div class="container">
 <div class="section-head">
-<small>02 / EXPERTISE</small>
+<small>03 / SKILLS</small>
 <h2>مهارت‌های تخصصی</h2>
 </div>
 <div class="skills">
 <div class="skill"><span>⌗</span>نقشه‌کشی معماری</div>
 <div class="skill"><span>⌂</span>نقشه‌خوانی ساختمان</div>
-<div class="skill"><span>▱</span>طراحی داخلی مسکونی و تجاری</div>
+<div class="skill"><span>◇</span>طراحی داخلی مسکونی و تجاری</div>
 <div class="skill"><span>▦</span>اصول معماری داخلی</div>
-<div class="skill"><span>◇</span>مدل‌سازی سه‌بعدی</div>
+<div class="skill"><span>▱</span>مدل‌سازی سه‌بعدی</div>
 <div class="skill"><span>✳</span>خلاقیت و ایده‌پردازی</div>
 </div>
-
-<div class="card" style="margin-top:16px">
-<h3>ویژگی‌های فردی</h3>
+<div class="card" style="margin-top:15px">
+<h3><span>▌</span> ویژگی‌های فردی</h3>
 <p class="muted">
-یادگیری و پیشرفت، خلاقیت در طراحی، مسئولیت‌پذیری،
-نظم و انگیزه برای کسب تجربه کاری.
+علاقه‌مند به یادگیری و پیشرفت، خلاقیت در طراحی،
+مسئولیت‌پذیری، نظم و انگیزه برای کسب تجربه کاری.
 </p>
 </div>
 </div>
@@ -321,32 +330,37 @@ footer{
 <section id="portfolio">
 <div class="container">
 <div class="section-head">
-<small>03 / SELECTED WORK</small>
+<small>04 / SELECTED WORK</small>
 <h2>زمینه‌های نمونه‌کار</h2>
-<p class="muted">در این بخش می‌توان تصاویر واقعی پروژه‌های معماری را قرار داد.</p>
+<p class="muted">بعداً می‌توانی تصاویر واقعی پروژه‌ها را جایگزین کنی.</p>
 </div>
-
 <div class="projects">
 <div class="project">
-<div class="project-visual"></div>
-<div>
+<div class="project-art">
+<svg viewBox="0 0 160 100" fill="none">
+<path d="M12 12H148V88H12Z M12 40H65V12 M65 40V88 M65 60H148 M105 12V40" stroke="#a18ad1" stroke-width="1.5"/>
+</svg>
+</div>
 <h3>طراحی سه‌بعدی فضاهای داخلی</h3>
 <p>مدل‌سازی و طراحی فضا</p>
 </div>
-</div>
 <div class="project">
-<div class="project-visual"></div>
-<div>
+<div class="project-art">
+<svg viewBox="0 0 160 100" fill="none">
+<path d="M15 85V35L80 10L145 35V85H15Z M15 35H145 M55 85V45H105V85 M30 48H45V63H30Z M115 48H130V63H115Z" stroke="#a18ad1" stroke-width="1.5"/>
+</svg>
+</div>
 <h3>پروژه‌های طراحی معماری</h3>
 <p>پلان و ایده‌پردازی</p>
 </div>
-</div>
 <div class="project">
-<div class="project-visual"></div>
-<div>
+<div class="project-art">
+<svg viewBox="0 0 160 100" fill="none">
+<path d="M20 10H140V90H20Z M35 25H80V50H35Z M95 25H125V75H95Z M35 65H80V75H35Z" stroke="#a18ad1" stroke-width="1.5"/>
+</svg>
+</div>
 <h3>تمرین‌های تخصصی تحصیلی</h3>
 <p>نقشه‌ها و مطالعات معماری</p>
-</div>
 </div>
 </div>
 </div>
@@ -356,18 +370,17 @@ footer{
 <div class="container contact">
 <div>
 <div class="section-head">
-<small>04 / CONTACT</small>
+<small>05 / CONTACT</small>
 <h2>آماده یادگیری و همکاری</h2>
 </div>
-<p class="muted">برای فرصت‌های کارآموزی معماری داخلی با من در تماس باشید.</p>
+<p class="muted">برای فرصت‌های کارآموزی معماری داخلی تماس بگیرید.</p>
 <p>تهران، تهران</p>
 </div>
-
 <div class="card">
 <h3>اطلاعات تماس</h3>
-<p>شماره تماس: <span dir="ltr">۰۹۳۹۳۴۷۶۴۴۳</span></p>
+<p>شماره تماس: ۰۹۳۹۳۴۷۶۴۴۳</p>
 <div class="buttons">
-<a class="btn dark" href="tel:09393476443">تماس با رامتین</a>
+<a class="btn primary" href="tel:09393476443">تماس با رامتین</a>
 </div>
 </div>
 </div>
@@ -375,10 +388,7 @@ footer{
 </main>
 
 <footer>
-<div class="container">
-RAMTIN NAHALGAR · INTERIOR ARCHITECTURE · 2026
-</div>
+<div class="container">RAMTIN NAHALGAR · INTERIOR ARCHITECTURE · 2026</div>
 </footer>
-
 </body>
 </html>
